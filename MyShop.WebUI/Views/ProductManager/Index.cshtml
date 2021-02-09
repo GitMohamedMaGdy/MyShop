@@ -9,44 +9,44 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-condensed table-hover">
     <tr>
-        <th>
+        <th class="text-center">Image</th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Price)
         </th>
-        <th>
+        <th class="text-center">
             @Html.DisplayNameFor(model => model.Category)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th></th>
+       
+        <th class="text-center"></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="text-center">
+            <img src="~/Content/Images/@item.Image" class="img-thumbnail img-rounded"style="height:50px"/>
+        </td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.Price)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.Category)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
+        
+        <td class="text-center">
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
