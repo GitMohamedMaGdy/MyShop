@@ -50,10 +50,13 @@
             <td>
                 <a href="@Url.Action("RemoveFromBasket","Basket",new { Id = item.Id })" class="btn btn-danger" >Delete</a>
             </td>
+           
         </tr>
     }
-    <tr>
-        <td colspan="4" style="text-align:right"><strong>BasketTotal</strong></td>
-        <td>@string.Format("{0:c}", (from p in Model select p.price * p.Quantity).Sum())</td>
-    </tr>
+<tr>
+    <td colspan="4" style="text-align:right"><strong>BasketTotal</strong></td>
+    <td>@string.Format("{0:c}", (from p in Model select p.price * p.Quantity).Sum())</td>
+    <td><a class="btn btn-primary" href="@Url.Action("CheckOut","Basket")">CheckOut</a></td>
+
+</tr>
 </table>
