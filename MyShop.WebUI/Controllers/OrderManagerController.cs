@@ -44,7 +44,7 @@ namespace MyShop.WebUI.Controllers
         {
             Order order = orderSerive.GetOrder(Id);
             order.OrderStatus = OrderToUpdate.OrderStatus;
-            orderSerive.UpdateOrder(OrderToUpdate);
+            orderSerive.UpdateOrder(order);
             return RedirectToAction("Index");
         }
     }
